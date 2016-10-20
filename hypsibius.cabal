@@ -14,9 +14,12 @@ cabal-version:    >= 1.12
 executable hypsibius
   hs-source-dirs:      src
   main-is:             Main.hs
-  other-modules:       State
-                     , Draw
-                     , Event
+  other-modules:       Hypsibius.Data
+                     , Hypsibius.Draw
+                     , Hypsibius.Event
+                     , Hypsibius.Formats
+                     , Hypsibius.Formats.Scale
+                     , Hypsibius.State
   default-extensions:  OverloadedStrings,
                        ScopedTypeVariables
   ghc-options:         -Wall -threaded

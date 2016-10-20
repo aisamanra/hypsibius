@@ -1,10 +1,10 @@
-module Event where
+module Hypsibius.Event where
 
 import           Brick (EventM, Next)
 import qualified Brick
 import qualified Graphics.Vty.Input.Events as Vty
 
-import qualified State
+import qualified Hypsibius.State as State
 
 data Event = VtyEvent Vty.Event
 

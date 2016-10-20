@@ -6,9 +6,10 @@ import           Data.Default (def)
 import qualified Graphics.Vty as Vty
 
 
-import qualified State
-import qualified Draw
-import qualified Event
+import qualified Hypsibius.State as State
+import qualified Hypsibius.Draw as Draw
+import qualified Hypsibius.Event as Event
+import qualified Hypsibius.Formats as Formats
 
 trackerApp :: App State.State Event.Event Int
 trackerApp = App

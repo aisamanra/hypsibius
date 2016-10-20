@@ -1,13 +1,13 @@
 {-# LANGUAGE ViewPatterns #-}
 
-module Formats.Scale where
+module Hypsibius.Formats.Scale (parse) where
 
 import           Data.Sequence (Seq)
 import qualified Data.Sequence as S
 import           Data.Text (Text)
 import qualified Data.Text as T
 
-import           State (Note(..))
+import           Hypsibius.Data (Note(..))
 
 parse :: Text -> Either String (Seq Note)
 parse t = case T.lines t of
