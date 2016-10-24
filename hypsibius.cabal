@@ -26,6 +26,7 @@ executable hypsibius
   build-depends:       base >=4.7 && <4.9
                      , brick
                      , lens-family-core
+                     , lens-family-th
                      , text
                      , containers
                      , vty
