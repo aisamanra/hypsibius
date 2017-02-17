@@ -1,7 +1,7 @@
 module Main where
 
 import           Brick
-import qualified Control.Concurrent.Chan as Chan
+import qualified Brick.BChan as Brick
 import           Data.Default (def)
 import qualified Graphics.Vty as Vty
 
@@ -17,12 +17,11 @@ trackerApp = App
   , appChooseCursor = \_ _ -> Nothing
   , appHandleEvent  = Event.handle
   , appStartEvent   = Event.initialize
-  , appAttrMap      = def
-  , appLiftVtyEvent = Event.VtyEvent
+  , appAttrMap      = \ _ -> attrMap mempty []
   }
 
 main :: IO ()
 main = do
-  eventChan <- Chan.newChan
-  _ <- customMain (Vty.mkVty def) eventChan trackerApp State.newState
+  eventChan <- Brick.newBChan 32
+  _ <- customMain (Vty.mkVty mempty) (Just eventChan) trackerApp State.newState
   return ()
