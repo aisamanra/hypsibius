@@ -1,7 +1,10 @@
 {-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE OverloadedLists #-}
+{-# LANGUAGE GADTs #-}
 
 module Hypsibius.Data where
 
+import           Data.Adnot
 import           Data.Sequence (Seq)
 import           Data.Text (Text)
 import           Data.Word (Word8)
@@ -39,7 +42,19 @@ $(makeLenses ''InstrRef)
 data Note = Note
   { _noteCents      :: Double
   , _noteAppearance :: Text
+  , _noteColor      :: Maybe Text
   } deriving (Eq, Show)
+
+instance FromAdnot Note where
+  parseAdnot = withSum "Note" go
+    where go "note" [name, cents] =
+            Note <$> parseAdnot cents <*> parseAdnot name <*> pure Nothing
+          go "note" [name, cents, color] =
+            Note <$> parseAdnot cents
+                 <*> parseAdnot name
+                 <*> (Just <$> parseAdnot color)
+          go "note" _ = fail "Unknown argument structure"
+          go c _ = fail ("Expected note, got " ++ show c)
 
 $(makeLenses ''Note)
 
@@ -57,6 +72,12 @@ data Scale = Scale
   , _scaleTotalCents :: Double
   , _scaleNotes      :: Seq Note
   } deriving (Eq, Show)
+
+instance FromAdnot Scale where
+  parseAdnot = withProduct "Scale" $ \o ->
+    Scale <$> o .: "name"
+          <*> o .: "size"
+          <*> o .: "notes"
 
 $(makeLenses ''Scale)
 
@@ -89,7 +110,6 @@ data TrackChunk = TrackChunk
 data Track = Track
   {
   } deriving (Eq, Show)
-
 
 
 data Song = Song

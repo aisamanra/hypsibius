@@ -1,10 +1,10 @@
 module Hypsibius.Formats where
 
+import           Data.Adnot
 import           Data.Sequence (Seq)
-import qualified Data.Text.IO as T
+import qualified Data.ByteString as BS
 
-import qualified Hypsibius.Formats.Scale as Scale
-import           Hypsibius.Data (Note)
+import           Hypsibius.Data
 
-readScale :: FilePath -> IO (Either String (Seq Note))
-readScale = fmap Scale.parse . T.readFile
+readScale :: FilePath -> IO (Either String Scale)
+readScale = fmap decode . BS.readFile

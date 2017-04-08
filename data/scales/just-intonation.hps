@@ -1,15 +1,18 @@
-hypsibius scale
 # the twelve-tone scale in just intonation
-
-   0.00  C
- 111.72  C♯
- 203.91  D
- 315.64  D♯
- 386.31  E
- 498.04  F
- 582.51  F♯
- 701.96  G
- 813.69  G♯
- 884.36  A
- 996.09  A♯
-1088.27  B
+{ name "twelve-tone just intonation"
+  size 1200
+  notes [
+    (note "A"  0)
+    (note "A♯" 111.72 black)
+    (note "B"  203.91)
+    (note "C"  315.64)
+    (note "C♯" 386.31 black)
+    (note "D"  498.04)
+    (note "D♯" 582.51 black)
+    (note "E"  701.96)
+    (note "F"  813.69)
+    (note "F♯" 884.36 black)
+    (note "G"  996.09)
+    (note "G♯" 1088.27 black)
+  ]
+}

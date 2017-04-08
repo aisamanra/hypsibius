@@ -1,28 +1,12 @@
 {-# LANGUAGE ViewPatterns #-}
 
-module Hypsibius.Formats.Scale (parse) where
+module Hypsibius.Formats.Scale where
 
-import           Data.SCargot
-import           Data.SCargot.Repr.Basic
+import           Data.Adnot
 import           Data.Sequence (Seq)
 import qualified Data.Sequence as S
-import           Data.Text (Text)
--- import qualified Data.Text as T
 
 import           Hypsibius.Data (Note(..), Scale(..))
-
-data Atom
-  = AIdent  Text
-  | AString Text
-  | AInt    Integer
-  | AFloat  Double
-  | AKWord Text
-    deriving (Eq, Show)
-
-parseScale :: Text -> Either String Scale
-parseScale = undefined
-
-parse = undefined
 
 {-
 

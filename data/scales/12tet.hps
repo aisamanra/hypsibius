@@ -1,16 +1,18 @@
- ;; this is a basic twelve-tone scale
-(hypsibius-scale
- :name "twelve-tone equal temperament"
- :size 1200
- (note "A"  0)
- (note "A♯" 100 :color black)
- (note "B"  200)
- (note "C"  300)
- (note "C♯" 400 :color black)
- (note "D"  500)
- (note "D♯" 600 :color black)
- (note "E"  700)
- (note "F"  800)
- (note "F♯" 900 :color black)
- (note "G"  1000)
- (note "G♯" 1100 :color black))
+# this is a basic twelve-tone scale
+{ name "twelve-tone equal temperament"
+  size 1200
+  notes [
+    (note "A"  0)
+    (note "A♯" 100 black)
+    (note "B"  200)
+    (note "C"  300)
+    (note "C♯" 400 black)
+    (note "D"  500)
+    (note "D♯" 600 black)
+    (note "E"  700)
+    (note "F"  800)
+    (note "F♯" 900 black)
+    (note "G"  1000)
+    (note "G♯" 1100 black)
+  ]
+}

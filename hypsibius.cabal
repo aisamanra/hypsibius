@@ -28,8 +28,9 @@ executable hypsibius
                      , lens-family-core
                      , lens-family-th
                      , text
+                     , bytestring
                      , containers
                      , vty
                      , data-default
-                     , s-cargot
+                     , adnot
   default-language:    Haskell2010
