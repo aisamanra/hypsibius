@@ -1,0 +1,19 @@
+# this is a justly-tuned Bohlen-Pierce scale
+{ name "bohlen-pierce scale"
+  size 1902
+  notes [
+    (note "C"  0)
+    (note "D♭" 133)
+    (note "D"  302)
+    (note "E"  435)
+    (note "F"  583)
+    (note "G♭" 737)
+    (note "G"  884)
+    (note "H"  1018)
+    (note "J♭" 1165)
+    (note "J"  1319)
+    (note "A"  1467)
+    (note "B♭" 1600)
+    (note "B"  1769)
+  ]
+}
